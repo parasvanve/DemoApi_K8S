@@ -1,4 +1,4 @@
-name: CI Pipeline 
+name: CI Pipeline
 
 on:
   push:
@@ -32,3 +32,6 @@ jobs:
 
       - name: Run tests
         run: dotnet test --no-build --configuration Release
+
+      - name: Build Docker image
+        run: docker build -t demo-api:latest ./DemoApi_K8S
