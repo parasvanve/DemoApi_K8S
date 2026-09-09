@@ -34,4 +34,4 @@ jobs:
         run: dotnet test --no-build --configuration Release
 
       - name: Build Docker image
-        run: docker build -t demo-api:latest .
+        run: docker build -t demo-api:latest ./DemoApi_K8S
