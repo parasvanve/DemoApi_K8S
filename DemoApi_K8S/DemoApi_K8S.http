@@ -1,0 +1,6 @@
+@DemoApi_K8S_HostAddress = http://localhost:5072
+
+GET {{DemoApi_K8S_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
