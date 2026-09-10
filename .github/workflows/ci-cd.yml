@@ -73,6 +73,9 @@ jobs:
 
       - name: Deploy to Minikube
         run: kubectl apply -f K8S/deployment.yaml
+        
+      - name: Restart Deployment
+        run: kubectl rollout restart deployment/demo-api
 
       - name: Apply Service
         run: kubectl apply -f K8S/service.yaml
