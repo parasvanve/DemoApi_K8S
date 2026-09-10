@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
         - name: demo-api
-          image: parasvanve/demo-api:v2
+          image: parasvanve/demo-api:latest
           ports:
             - containerPort: 8080
