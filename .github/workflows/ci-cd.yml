@@ -10,6 +10,10 @@ on:
       - main
 
 jobs:
+
+  # =========================
+  # CI JOB
+  # =========================
   build-and-test:
 
     runs-on: ubuntu-latest
@@ -51,3 +55,24 @@ jobs:
       # Push image
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/demo-api:latest
+
+
+  # =========================
+  # CD JOB
+  # =========================
+  deploy-to-minikube:
+
+    runs-on: self-hosted
+
+    needs: build-and-test
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Minikube
+        run: kubectl apply -f K8S/deployment.yaml
+
+      - name: Apply Service
+        run: kubectl apply -f K8S/service.yaml
