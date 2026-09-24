@@ -8,6 +8,12 @@ app.MapGet("/", () =>
     
 });
 
+app.MapGet("/Home", () =>
+{
+    return "Hello from Kubernetes -  ";
+
+});
+
 app.MapGet("/health", () =>
 {
     return "Healthy";
