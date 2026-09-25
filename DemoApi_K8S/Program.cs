@@ -10,7 +10,13 @@ app.MapGet("/", () =>
 
 app.MapGet("/home", () =>
 {
-    return "Hello from Kubernetes -  ";
+    return "Hello from Home -  ";
+
+});
+
+app.MapGet("/Dashboard", () =>
+{
+    return "Hello from Dashboard -  ";
 
 });
 
@@ -22,7 +28,7 @@ app.MapGet("/about", () =>
 
 app.MapGet("/health", () =>
 {
-    return "Healthy";
+    return "Hello from Healthy";
 });
 
 app.Run();
