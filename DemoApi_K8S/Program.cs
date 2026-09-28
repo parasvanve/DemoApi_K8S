@@ -14,6 +14,12 @@ app.MapGet("/home", () =>
 
 });
 
+app.MapGet("/version", () =>
+{
+    return "Hello from version -  ";
+
+});
+
 app.MapGet("/Dashboard", () =>
 {
     return "Hello from Dashboard -  ";
