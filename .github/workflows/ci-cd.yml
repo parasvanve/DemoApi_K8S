@@ -44,17 +44,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Build image
       - name: Build Docker image
-        run: docker build -t demo-api:latest ./DemoApi_K8S
-
-      # Tag image
+        run: docker build -t demo-api:v${{ github.run_number }} ./DemoApi_K8S
+      
       - name: Tag Docker image
-        run: docker tag demo-api:latest ${{ secrets.DOCKERHUB_USERNAME }}/demo-api:latest
-
-      # Push image
+        run: docker tag demo-api:v${{ github.run_number }} ${{ secrets.DOCKERHUB_USERNAME }}/demo-api:v${{ github.run_number }}
+      
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/demo-api:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/demo-api:v${{ github.run_number }}
 
 
   # =========================
