@@ -4,7 +4,7 @@ var app = builder.Build();
 
 app.MapGet("/", () =>
 {
-    return "Hello from Kubernetes - Version 4! Hello-------------------------------------------e ";
+    return "Hello from Kubernetes -  Hello-------------------------------------------e ";
     
 });
 
@@ -14,11 +14,6 @@ app.MapGet("/home", () =>
 
 });
 
-app.MapGet("/version", () =>
-{
-    return "Hello from version -  ";
-
-});
 
 app.MapGet("/Dashboard", () =>
 {
