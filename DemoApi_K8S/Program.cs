@@ -13,6 +13,11 @@ app.MapGet("/home", () =>
     return "Hello from Home -  ";
 
 });
+app.MapGet("/home2", () =>
+{
+    return "Hello from Home -  ";
+
+});
 
 
 app.MapGet("/Dashboard", () =>
